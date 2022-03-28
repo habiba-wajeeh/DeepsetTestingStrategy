@@ -3,8 +3,8 @@ class Constants:
 
     file_to_be_uploaded = "test.txt"
 
-    email = "habiba.wajeeh@gmail.com"
-    password = "#Kitten@12345"
+    email = "some-email@email.com"
+    password = "somestrongpassword"
 
     contents_of_file = "Test text in this file."
 
