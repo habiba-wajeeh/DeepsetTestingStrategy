@@ -48,6 +48,8 @@ class DeepsetAnnotationUserFlow(unittest.TestCase):
         final_create_pjt_button = self.driver.find_element_by_xpath(Locator.final_create_project_button)
         final_create_pjt_button.click()
 
+        time.sleep(3)
+
         elem = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, Locator.project_created_row_path))
         )
