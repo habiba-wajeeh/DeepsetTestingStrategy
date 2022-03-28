@@ -35,6 +35,7 @@ class DeepsetAnnotationUserFlow(unittest.TestCase):
         elem = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, Locator.projects_heading_path))
         )
+
         assert elem.text == Constants.project_heading
 
     def test_a_create_project(self):
@@ -53,6 +54,7 @@ class DeepsetAnnotationUserFlow(unittest.TestCase):
         elem = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, Locator.project_created_row_path))
         )
+
         assert Constants.project_name in elem.text
 
     def test_c_delete_project(self):
@@ -62,6 +64,7 @@ class DeepsetAnnotationUserFlow(unittest.TestCase):
 
         )
 
+        # Parse the list of the projects and get the row number for the project that you just created above.
         line = elem.text.split("\n")
         for i in range(len(line)):
             if Constants.project_name in line[i]:
